@@ -1,0 +1,23 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/fonts": "^0.11.4",
+    "@nuxt/icon": "^1.13.0",
+    "@nuxt/image": "^1.10.0",
+    "@prisma/client": "^6.8.2",
+    "nuxt": "^3.17.3",
+    "sass": "^1.89.0",
+    "sdk-node-apis-efi": "^1.2.20",
+    "vue": "^3.5.14",
+    "vue-router": "^4.5.1"
+  }
+}
