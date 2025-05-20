@@ -8,6 +8,7 @@ const options = {
   certificate: '../../../certs/Dev.p12'
 }
 
+console.log('\n','----------->options: ', (options))
 const efipay = new EfiPay(options)
 
 export default efipay
