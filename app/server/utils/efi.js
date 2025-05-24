@@ -1,26 +1,30 @@
+const client_id = process.env.EFI_CLIENT_ID
+const client_secret = process.env.EFI_CLIENT_SECRET
+const url = process.env.EFI_URL
 
-import EfiPay from 'sdk-node-apis-efi'
-import path from 'path'
-import fs from 'fs'
+const basicToken = btoa(`${client_id}:${client_secret}`)
 
-const certPath = path.resolve(__dirname, 'certs/Dev.p12')
-console.log('\n','----------->certPath: ', (certPath))
-const certificate = fs.readFileSync(certPath)
-console.log('\n','----------->certificate: ', (certificate))
+let credential = ''
+let expire_at = 0
 
-const options = {
-  clientId: process.env.EFI_CLIENT_ID,
-  clientSecret: process.env.EFI_CLIENT_SECRET,
-  sandbox: true,
-  certificate: certificate
+export default async function getToken() {
+  const now = Date.now()
+
+  if (now >= expire_at) {
+    console.log('\nRenovando token...')
+
+    const res = await $fetch(`${url}/v1/authorize`, {
+      method: 'POST',
+      body: { grant_type: 'client_credentials' },
+      headers: { Authorization: `Basic ${basicToken}` }
+    })
+
+    credential = res.access_token
+    expire_at = parseInt(res.expire_at)
+  }
+
+  return {
+    access_token: credential,
+    expire_at
+  }
 }
-
-console.log('\n','----------->options: ', (options))
-let efipay = {};
-try{
-  efipay = new EfiPay(options)
-}catch(err){
-  console.log('\n','----------->err: ', (err))
-}
-
-export default { efipay }
