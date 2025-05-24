@@ -1,4 +1,8 @@
 <template>
-  <h1>Hello world</h1>
-  <NuxtLink to="/charges/billet">Boletos</NuxtLink>
+  <div>
+    <h1>Teste</h1>
+    <ExamplesBillet/>
+    <ExamplesPix/>
+    <ExamplesCard/>
+  </div>
 </template>
