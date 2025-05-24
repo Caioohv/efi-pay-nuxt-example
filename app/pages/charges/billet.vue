@@ -1,16 +1,23 @@
 <template>
   <div>
     <button @click="createCharge">Emitir boleto</button>
+    <pre>
+      <code>
+        {{  }}
+      </code>
+    </pre>
   </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
+var content = ref({});
+
 const createCharge = async () => {
-  const content = await fetch("/api/charges/billet1", {
+  let res = await fetch("/api/charges/billet1", {
     method: "post",
   });
-
-  console.log(content);
+  content = JSON.stringify(res, null, 2)
 };
 </script>
 

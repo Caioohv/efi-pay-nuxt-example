@@ -18,7 +18,6 @@ export default async function getToken() {
       body: { grant_type: 'client_credentials' },
       headers: { Authorization: `Basic ${basicToken}` }
     })
-    console.log('\n','----------->res: ', (res))
 
     credential = res.access_token
     expire_at = parseInt(res.expire_at)
