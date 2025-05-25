@@ -39,8 +39,6 @@ export default defineEventHandler(async (event) => {
     }
   }
 
-
-  console.log('\n','----------->body: ', (body))
   const options = {
     method: 'POST',
     body: body,

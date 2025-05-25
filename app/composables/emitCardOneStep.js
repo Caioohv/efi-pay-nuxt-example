@@ -8,7 +8,6 @@ export default async (payment_token) => {
       "Content-Type": "application/json",
     },
   }
-  console.log('\n','----------->options: ', (options))
   let res = await fetch("/api/charges/cardonestep", options);
 
   let body = await res.json();

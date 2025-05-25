@@ -11,8 +11,6 @@ export default async function getToken() {
   const now = Date.now()
 
   if (now >= expire_at) {
-    console.log('\nRenovando token...')
-
     const res = await $fetch(`${url}/v1/authorize`, {
       method: 'POST',
       body: { grant_type: 'client_credentials' },
