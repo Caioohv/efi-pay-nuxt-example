@@ -1,0 +1,14 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 600px;
+  width: 90%;
+  padding: 2rem;
+  
+  border: 1px solid var(--color-slate-700);
+  background-color: var(--color-gray-800);
+  border-radius: 0.5rem;
+}

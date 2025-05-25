@@ -10,7 +10,10 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/ui",
   ],
-  css: ["assets/styles/main.css"],
+  css: [
+    "assets/styles/main.css",
+    "assets/styles/components.css"
+  ],
   srcDir: "app/",
   ui: {
     theme: {

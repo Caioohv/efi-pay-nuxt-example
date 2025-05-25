@@ -1,8 +1,17 @@
 <template>
-  <div>
-    <h1>Teste</h1>
+  <div class="page">
+    <Hero/>
     <ExamplesBillet/>
-    <ExamplesPix/>
     <ExamplesCard/>
   </div>
 </template>
+
+<style scoped>
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5vh;
+}
+</style>
