@@ -12,6 +12,7 @@
       loading-icon="i-lucide-loader"
       class="rounded-full w-40 mb-2"
       @click="emitir()"
+      :disabled="!loaded"
     >
       <span class="text-center text-xs w-full">{{ texto }}</span>
     </UButton>
@@ -39,8 +40,10 @@
 import { ref } from "vue";
 
 let CardInfo = null;
+let loaded = ref(false);
 
 onMounted(async () => {
+  loaded.value = true;
   if (process.client) {
     const { default: EfiPay } = await import("payment-token-efi");
 
