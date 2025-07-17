@@ -2,6 +2,10 @@
 
 This is a basic application that uses Efí's payment API 
 
+The project is running in the Efí's sandbox environment, so you can create charges and test your code.
+
+Feel free to use this as an example or to create a pull request :)
+
 ## Setup
 
 Make sure to install dependencies:
